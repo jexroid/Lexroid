@@ -1,6 +1,9 @@
 #!/bin/bash
 
-source install_deps.sh
+source lib/install_deps.sh
+source lib/function.sh
+
+
 printf "  _     _______  ______   ___ ___ ____  \n"
 printf " | |   | ____\ \/ /  _ \ / _ \_ _|  _ \ \n"
 printf " | |   |  _|  \  /| |_) | | | | || | | |\n"
@@ -16,19 +19,7 @@ NC='\033[0m'
 platform=$2
 urlsfile=$1
 
-# Define a function to provide tab completion for the $path variable
-_path_completion() {
-    local cur prev
-    COMPREPLY=()
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    prev="${COMP_WORDS[COMP_CWORD-1]}"
-    if [[ ${cur} == -* ]] ; then
-        COMPREPLY=( $(compgen -W "-h --help" -- ${cur}) )
-        return 0
-    fi
-    COMPREPLY=( $(compgen -d ${cur}) )
-    return 0
-}
+
 
 
 complete -F _path_completion path
