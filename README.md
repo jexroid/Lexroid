@@ -8,8 +8,13 @@ This Subdomain Reconnaissance Tool is an all-in-one solution for bug hunters and
 **NOTE :** lexroid tries installing assetfinder, subfinder and other tools using GO and apt. 
 but it's better if you install them manually by yourself.
 ### Tools
-- findomain
 - assetfinder
+- findomain
+- httprobe
+- subfinder
+- dnsx
+- httpx
+- anew
 
 
 ## Supporting Operation System
