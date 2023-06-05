@@ -3,11 +3,18 @@ This Subdomain Reconnaissance Tool is an all-in-one solution for bug hunters and
 
 ## Requirments
 **NOTE :** lexroid tries installing assetfinder, subfinder and other tools using GO and apt 
-- GO 1.20.0
+- GO 1.20.0 or higher version
 - Python 3.6 or higher version
+**Tools**
+-- findomain
+-- assetfinder
+
 
 ## Supporting Operation System
+**LINUX**
 - Debian base
+- Arch base **(SOON)**
+- Red hat base **(SOON)**
 
 ## Features
 - Automated subdomain discovery using multiple tools (amass, subfinder, assetfinder, etc.)
