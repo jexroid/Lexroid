@@ -2,10 +2,11 @@
 This Subdomain Reconnaissance Tool is an all-in-one solution for bug hunters and security researchers to automate the process of discovering and analyzing subdomains. The tool combines the power of popular tools like amass, subfinder, assetfinder, and more to provide a comprehensive and efficient workflow for subdomain enumeration and analysis.
 
 ## Requirments
-**NOTE :** lexroid tries installing assetfinder, subfinder and other tools using GO and apt 
 - GO 1.20.0 or higher version
 - Python 3.6 or higher version
 
+**NOTE :** lexroid tries installing assetfinder, subfinder and other tools using GO and apt.
+but it's better if you install them manually by yourself.
 ### Tools
 - findomain
 - assetfinder
