@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: duplicate, enhancement, good first issue, help wanted, question
+labels: ''
 assignees: jexroid
 
 ---
