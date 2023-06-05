@@ -6,8 +6,8 @@ This Subdomain Reconnaissance Tool is an all-in-one solution for bug hunters and
 - GO 1.20.0 or higher version
 - Python 3.6 or higher version
 **Tools**
--- findomain
--- assetfinder
+- findomain
+- assetfinder
 
 
 ## Supporting Operation System
