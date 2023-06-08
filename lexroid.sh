@@ -4,13 +4,7 @@ source lib/install_deps.sh
 source lib/function.sh
 
 
-printf "  _     _______  ______   ___ ___ ____  \n"
-printf " | |   | ____\ \/ /  _ \ / _ \_ _|  _ \ \n"
-printf " | |   |  _|  \  /| |_) | | | | || | | |\n"
-printf " | |___| |___ /  \|  _ <  |_| | || |_| |\n"
-printf " |_____|_____/_/\_\_| \_|\___/___|____/ \n"
-printf "                                        \n"
-printf "                         version : 1.0.0\n\n"
+banner
 
 Green='\033[0;32m'
 RED='\033[0;31m'
