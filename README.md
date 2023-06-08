@@ -1,6 +1,10 @@
 <div align='center'>
   
 ![Lexroid_logo](https://github.com/jexroid/jexroid/blob/main/img/image.png)
+  <br>
+![Debian](https://img.shields.io/badge/Debian-red?logo=Debian&logoColor=white&style=for-the-badge)
+![Red_hat](https://img.shields.io/badge/red%20hat-black?logo=red%20hat&logoColor=red&style=for-the-badge)
+![Arch](https://img.shields.io/badge/red%20hat-blue?logo=arch%20linux&logoColor=white&style=for-the-badge)
   
 </div>
 
