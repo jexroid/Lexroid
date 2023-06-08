@@ -1,11 +1,10 @@
 # Lexroid
 This Subdomain Reconnaissance Tool is an all-in-one solution for bug hunters and security researchers to automate the process of discovering and analyzing subdomains. The tool combines the power of popular tools like amass, subfinder, assetfinder, and more to provide a comprehensive and efficient workflow for subdomain enumeration and analysis.
 
-![python](https://img.shields.io/badge/python-3.6%20%3C=-blue?logo=python&logoColor=white&style=for-the-badge)
 
 ## Requirments
-- GO 1.20.0 or higher version
-- Python 3.6 or higher version
+- ![golang](https://img.shields.io/badge/Go-1.20.0%20%3C=-green?logo=go&logoColor=white&style=for-the-badge)
+- ![python](https://img.shields.io/badge/python-3.6%20%3C=-blue?logo=python&logoColor=white&style=for-the-badge)
 
 **NOTE :** lexroid tries installing assetfinder, subfinder and other tools using GO and apt. 
 but it's better if you install them manually by yourself.
