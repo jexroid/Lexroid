@@ -19,12 +19,13 @@ NC='\033[0m'
 platform=$2
 urlsfile=$1
 
+install_dependencies
 
 
 
 complete -F _path_completion path
 
-
+# if path_handler.py printed the path then print storing location:
 if pth=$(python3 data/path_handler.py); then
     if [ -e $pth ]; then
         printf "${YEL}storing data in -> ${NC}${pth}\n"
@@ -35,17 +36,21 @@ elif [ $? -eq 1 ]; then
     printf "${RED}Please define a path for storing your recon result : ${NC}";
     read -e path;
     pth=$(python3 data/path_handler.py $path);
+    # if error code 2 returned from python send user to loop till he/she entered a valid path
     if [ $? -eq 2 ]; then
       while true; do
         pth=$(python3 data/path_handler.py $path)
         if [ $? -eq 0 ]; then
+            # if path was valid, break the loop and store data in json file
             break
         else
-            printf "${RED}Invalid path. Please enter a valid path:${NC}";
+            # if path is invalid :
+            printf "${RED}Invalid path. Please enter a valid path:${NC} ";
             read -e path
         fi
     done
     fi
+    # all conditions are true so lets move on
     if [ -e $pth ]; then
         printf "${YEL}storing data in -> ${NC}${pth}\n"
     else
