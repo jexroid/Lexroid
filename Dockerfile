@@ -1,34 +1,46 @@
+# Build amass from source
+FROM golang:1.17 as amass-builder
+RUN git clone https://github.com/OWASP/Amass.git /amass
+WORKDIR /ass
+RUN go build -o /go/bin/amass ./cmd/amass
+
+# Build subfinder from source
+FROM golang:1.17 as subfinder-builder
+RUN git clone https://github.com/projectdiscovery/subfinder.git /subfinder
+WORKDIR /subfinder/v2/cmd/subfinder
+RUN go build -o /go/bin/subfinder
+
+# Build dnsx from source
+FROM golang:1.17 as dnsx
+RUN git clone https://github.com/projectdiscovery/dnsx.git /dnsx
+WORKDIR /dnsx/cmd/dnsx
+RUN go build -o /go/bin/dnsx
+
+# Final image
 FROM ubuntu:latest
 
-RUN apt-get update && \
-    apt-get install -y \
-    amass \
-    git \
-    python3 \
-    wget \
-    curl && \
-    apt-get clean && \
+# Update package lists and install required dependencies
+RUN apt update && \
+    apt install -y git python3 wget curl && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN go install github.com/tomnomnom/anew@latest
+# Copy built binaries from previous stages
+COPY --from=amass-builder /go/bin/amass /usr/local/bin/
+COPY --from=subfinder-builder /go/bin/subfinder /usr/local/bin/
+COPY --from=dnsx-builder /go/bin/dnsx /usr/local/bin/
 
-RUN go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+# Install assetfinder, anew, and httprobe
+RUN apt update && \
+    apt install -y golang && \
+    go get -u github.com/tomnomnom/assetfinder && \
+    go get -u github.com/tomnomnom/anew && \
+    go get -u github.com/tomnomnom/httprobe && \
+    apt remove -y golang && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+# Set the PATH environment variable to include the Go bin directory
+ENV PATH="/root/go/bin:${PATH}"
 
-RUN go install github.com/projectdiscovery/httpx/cmd/httpx@latest
-
-RUN go install github.com/tomnomnom/assetfinder@latest 
-
-RUN go install github.com/tomnomnom/httprobe@latest
-
-RUN wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux && \
-    chmod +x findomain-linux && \
-    sudo mv findomain-linux /usr/local/bin/findomain && \
-    rm -rf findomain-linux
-
-WORKDIR /app
-
-COPY . .
-
-CMD ["bash", "lexroid.sh"]
+CMD ["/bin/bash"]
