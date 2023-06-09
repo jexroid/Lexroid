@@ -27,16 +27,44 @@ but it's better if you install them manually by yourself.
 - httpx
 - anew
 
+## Usage
+
 ## Install
 - ### Docker
 
+1. Clone the repository using git and Change the directory to lexroid directory:
+```
+git clone https://github.com/jexroid/Lexroid && cd Lexroid
+```
+2. Run the docker command for installing the dependencies
+```
+docker build -t lexroid .
+```
+3. Give execution permision and run the tool by following command:
+```
+chmod +x ./lexroid.sh
+
+./lexroid.sh
+```
 - ### Manual
+**NOTE : only works for debian base system (Ubuntu,kali,..)**
+1. Clone the repository using git and Change the directory to lexroid directory:
+```
+git clone https://github.com/jexroid/Lexroid && cd Lexroid
+```
+2. Give execution permision and run the tool by following command:
+```
+chmod +x ./lexroid.sh
+
+./lexroid.sh
+```
+Lexroid tries installing all dependencies using **apt** in **go install**
 
 ## Supporting Operation System
 **LINUX**
 - Debian base
-- Arch base **(SOON)**
-- Red hat base **(SOON)**
+- Arch base
+- Red hat base
 
 ## Features
 - Automated subdomain discovery using multiple tools (amass, subfinder, assetfinder, etc.)
