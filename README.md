@@ -27,6 +27,11 @@ but it's better if you install them manually by yourself.
 - httpx
 - anew
 
+## Install
+- ### Docker
+
+- ### Manual
+
 ## Supporting Operation System
 **LINUX**
 - Debian base
