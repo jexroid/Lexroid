@@ -67,9 +67,8 @@ Lexroid tries installing all dependencies using **apt** in **go install**
 
 ## Features
 - Automated subdomain discovery using multiple tools (amass, subfinder, assetfinder, etc.)
-- Integration with Burp Suite for further analysis
+- Integration with **Burp Suite** for further analysis
 - Live host detection using httprobe
-- Subdomain takeover vulnerability scanning
 - Efficient storage and organization of results
 
 ## Contributing
