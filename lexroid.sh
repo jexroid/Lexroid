@@ -3,7 +3,7 @@
 source lib/install_deps.sh
 source lib/function.sh
 
-
+#sudo ln -s $(pwd)/logsensor.py /usr/local/bin/logsensor
 banner
 
 Green='\033[0;32m'
