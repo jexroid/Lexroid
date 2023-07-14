@@ -1,4 +1,6 @@
+<h3>(Demo Version)</h3>
 <div align='center'>
+  
   
 ![Lexroid_logo](https://github.com/jexroid/jexroid/blob/main/img/image.png)
   <br>
